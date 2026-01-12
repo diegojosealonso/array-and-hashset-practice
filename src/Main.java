@@ -83,8 +83,10 @@ public class Main {
         misetdenumeros2.add(2);
         if (misetdenumeros1.size() > misetdenumeros2.size()){
             System.out.println("La lista más larga es " + misetdenumeros1);
-        } else  {
+        } else if (misetdenumeros1.size() < misetdenumeros2.size()){
             System.out.println("La lista más larga es " + misetdenumeros2);
+        } else {
+            System.out.println("Las listas son iguales");
         }
     }
 }
