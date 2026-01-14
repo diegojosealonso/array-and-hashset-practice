@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Main {
-    public static void main(String[] args) {
+    public static <Int> void main(String[] args) {
         // ejercicio 1
         ArrayList<String> miLista = new ArrayList<>();
         miLista.add("terry");
@@ -87,6 +88,61 @@ public class Main {
             System.out.println("La lista más larga es " + misetdenumeros2);
         } else {
             System.out.println("Las listas son iguales");
+        }
+
+
+        //ejercicio 7
+        HashMap<String, Integer> personas = new HashMap<String, Integer>();
+        personas.put("Brandon", 3);
+        personas.put("Carlos", 2);
+        personas.put("Daniel", 1);
+        personas.put("Nerea", 4);
+        personas.put("Isabel", 5);
+        Scanner sc2 = new Scanner(System.in);
+        System.out.println("Ingrese un nombre: ");
+        String nombrePedido = sc2.nextLine();
+        if (personas.containsKey(nombrePedido)) {
+            int edad = personas.get(nombrePedido);
+            boolean esMayor = edad > 18;
+            System.out.println("Edad: " + edad);
+            System.out.println("¿Es mayor de edad?: " + esMayor);
+            }
+
+
+        //ejercicio 8
+        HashMap<String, Double> alumnos = new HashMap<String, Double>();
+        alumnos.put("Brandom", 9.5);
+        alumnos.put("Carlos", 7.5);
+        alumnos.put("Daniel", 5.75);
+        alumnos.put("Nerea", 4.25);
+        alumnos.put("Isabel", 5.5);
+        Scanner sc3 = new Scanner(System.in);
+        System.out.println("Ingrese un nombre: ");
+        String nombrePedido2 = sc3.nextLine();
+        if (alumnos.containsKey(nombrePedido2)) {
+            double notaMedia = alumnos.get(nombrePedido2);
+            boolean aprobado =  notaMedia >= 5;
+            System.out.println("El alumno " + nombrePedido2 + " es " + notaMedia);
+            System.out.println("¿El alumno está aprobado?: " + aprobado);
+        }
+
+        //ejercicio 9
+        HashMap<String, String> usuarios = new HashMap<String, String>();
+        usuarios.put("Brandon", "Brandon");
+        usuarios.put("Carlos", "Carlos");
+        usuarios.put("Daniel", "Daniel");
+        usuarios.put("Nerea", "Nerea");
+        usuarios.put("Isabel", "Isabel");
+        Scanner sc4 = new Scanner(System.in);
+        System.out.println("Ingrese un nombre: ");
+        String nombrePedido3 = sc4.nextLine();
+        Scanner sc5 = new Scanner(System.in);
+        System.out.println("Ingrese una contraseña: ");
+        String contraseñaPedida = sc5.nextLine();
+        if (usuarios.containsKey(nombrePedido3) && usuarios.get(nombrePedido3).equals(contraseñaPedida)) {
+            System.out.println("Login correcto");
+        } else  {
+            System.out.println("Usuario y/o contraseña incorrecta");
         }
     }
 }
